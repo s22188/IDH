@@ -1,0 +1,807 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/9/2022 4:39:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VLAB004-13"
+  DTS:CreatorName="PJWSTK\s22360"
+  DTS:DTSID="{2EADBD74-9932-4671-9D52-B6528D3EDE20}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{CC2CD3F3-3D62-4011-9689-31DE248A6554}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{04967BBC-2B05-4927-A67E-2E0044BC3965}"
+      DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s22360">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=db-mssql16.pjwstk.edu.pl;Initial Catalog=s22360;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2DCE58D8-FAA7-4B68-AD43-3FECE7E3F20C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task - Uzupełnij tabelę pomocniczną Holiday"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source - Źródło danych dla tabeli pomocniczej Holiday"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Connections[FlatFileConnection]"
+                  connectionManagerID="{328CBBDA-0995-41B7-B376-5379C78CAF0E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager US Holiday Dates]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Month]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Month]"
+                      name="Month"
+                      precision="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Day]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Day]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Day]"
+                      name="Day"
+                      precision="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Year]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Year]"
+                      name="Year"
+                      precision="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      dataType="date"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Holiday]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Holiday" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[WeekDay]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="WeekDay" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Month]"
+                      dataType="numeric"
+                      name="Month"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Day]"
+                      dataType="numeric"
+                      name="Day"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].ExternalColumns[Year]"
+                      dataType="numeric"
+                      name="Year"
+                      precision="4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination - tabela Holiday"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Holiday]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+                  connectionManagerRefId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].Columns[Month]"
+                      cachedDataType="numeric"
+                      cachedName="Month"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].Columns[Day]"
+                      cachedDataType="numeric"
+                      cachedName="Day"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].Columns[Year]"
+                      cachedDataType="numeric"
+                      cachedName="Year"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      dataType="dbDate"
+                      name="Data" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                      dataType="numeric"
+                      name="Year"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                      dataType="numeric"
+                      name="Month"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input].ExternalColumns[Day]"
+                      dataType="numeric"
+                      name="Day"
+                      precision="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input].Columns[Date]"
+                      cachedDataType="date"
+                      cachedName="Date"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input].Columns[Month]"
+                      cachedDataType="numeric"
+                      cachedName="Month"
+                      cachedPrecision="2"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input].Columns[Day]"
+                      cachedDataType="numeric"
+                      cachedName="Day"
+                      cachedPrecision="2"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input].Columns[Year]"
+                      cachedDataType="numeric"
+                      cachedName="Year"
+                      cachedPrecision="4"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Date]"
+                      dataType="date"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Date]"
+                      name="Date"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Month]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Month]"
+                      name="Month"
+                      precision="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Day]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Day]"
+                      name="Day"
+                      precision="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Year]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output].Columns[Year]"
+                      name="Year"
+                      precision="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday.Paths[Sort Output]"
+              endId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli pomocniczej Holiday"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{87b6a2ea-f9b1-4ce9-97bf-68df963351a6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli pomocniczej Holiday"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{04967BBC-2B05-4927-A67E-2E0044BC3965}"
+          SQLTask:SqlStatementSource="truncate table Holiday;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli TimeSt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F739C8C4-7E02-4C1B-AEEA-777150B7002E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli TimeSt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{04967BBC-2B05-4927-A67E-2E0044BC3965}"
+          SQLTask:SqlStatementSource="truncate table TimeSt;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Wstaw czas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{700FFE04-A863-4159-9008-8B602A9780E1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Wstaw czas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{04967BBC-2B05-4927-A67E-2E0044BC3965}"
+          SQLTask:SqlStatementSource="exec InsertTime;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AACE89A0-26F1-4554-821E-0B6FC237B987}"
+      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli TimeSt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Execute SQL Task - Czyszczenie tabeli pomocniczej Holiday" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BA2F53F6-5134-4B77-A1D4-A0D27952C660}"
+      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli pomocniczej Holiday"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C01AF29A-50D5-4063-AB99-DE75E03F0695}"
+      DTS:From="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Execute SQL Task - Wstaw czas" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="294,42"
+          Id="Package\Execute SQL Task - Czyszczenie tabeli TimeSt"
+          TopLeft="464,30" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Execute SQL Task - Wstaw czas"
+          TopLeft="501,293" />
+        <NodeLayout
+          Size="340,42"
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday"
+          TopLeft="450,204" />
+        <NodeLayout
+          Size="357,42"
+          Id="Package\Execute SQL Task - Czyszczenie tabeli pomocniczej Holiday"
+          TopLeft="440,116" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="614.75,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="619.25,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="617.75,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="374,42"
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Flat File Source - Źródło danych dla tabeli pomocniczej Holiday"
+          TopLeft="442,69" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday"
+          TopLeft="501,314" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\Sort"
+          TopLeft="573,187" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday.Paths[Flat File Source Output]"
+          TopLeft="625.5,111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday.Paths[Sort Output]"
+          TopLeft="623.5,229">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85"
+              Start="0,0"
+              End="0,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Uzupełnij tabelę pomocniczną Holiday\OLE DB Destination - tabela Holiday">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

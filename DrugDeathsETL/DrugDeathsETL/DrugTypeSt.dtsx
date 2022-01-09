@@ -1,0 +1,1945 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/9/2022 4:35:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VLAB004-13"
+  DTS:CreatorName="PJWSTK\s22360"
+  DTS:DTSID="{8C4BA93A-049B-4BD5-B027-2B72453220A3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{5455EB04-72FA-4983-8BFB-C3FC2BDE30A3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{11C4E120-4687-49EA-BE13-8EE4B20FD20C}"
+      DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s22360">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=db-mssql16.pjwstk.edu.pl;Initial Catalog=s22360;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1225B357-6E3B-473D-848E-FB6CCB3E7C99}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task - Ładowanie wymiaru DrugTypeSt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Inputs[Data Conversion Input].Columns[Fentanyl_Analogue]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fentanyl_Analogue"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fentanyl_Analogue]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fentanyl_Analogue]"
+                      name="Copy of Fentanyl_Analogue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Inputs[Derived Column Input].Columns[Fentanyl_Analogue]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fentanyl_Analogue"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(Fentanyl_Analogue,".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source - Źródło danych dla wymiaru DrugTypeSt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Connections[FlatFileConnection]"
+                  connectionManagerID="{57D3F03C-C10C-4E2B-A07B-27C66CB0CFBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager Drug Deaths]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Heroin]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Heroin]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Heroin]"
+                      name="Heroin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Cocaine]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Cocaine]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Cocaine]"
+                      name="Cocaine"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl]"
+                      name="Fentanyl"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl_Analogue]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl_Analogue]"
+                      name="Fentanyl_Analogue"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxycodone]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Oxycodone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxycodone]"
+                      name="Oxycodone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxymorphone]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Oxymorphone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxymorphone]"
+                      name="Oxymorphone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Ethanol]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Ethanol]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Ethanol]"
+                      name="Ethanol"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydrocodone]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Hydrocodone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydrocodone]"
+                      name="Hydrocodone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Benzodiazepine]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Benzodiazepine]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Benzodiazepine]"
+                      name="Benzodiazepine"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Methadone]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Methadone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Methadone]"
+                      name="Methadone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Amphet]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Amphet]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Amphet]"
+                      name="Amphet"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Tramad]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Tramad]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Tramad]"
+                      name="Tramad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Morphine_NotHeroin]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Morphine_NotHeroin]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Morphine_NotHeroin]"
+                      name="Morphine_NotHeroin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydromorphone]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Hydromorphone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydromorphone]"
+                      name="Hydromorphone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Other]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Other]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Other]"
+                      name="Other"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[OpiateNOS]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[OpiateNOS]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[OpiateNOS]"
+                      name="OpiateNOS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[AnyOpioid]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[AnyOpioid]"
+                      length="1"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[AnyOpioid]"
+                      name="AnyOpioid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      dataType="date"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[DateType]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Sex]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceState]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DeathCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DeathCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[LocationifOther]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="LocationifOther" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[DescriptionofInjury]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="DescriptionofInjury" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryPlace]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryPlace" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryState]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[COD]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[OtherSignifican]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="OtherSignifican" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Heroin]"
+                      dataType="bool"
+                      name="Heroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Cocaine]"
+                      dataType="bool"
+                      name="Cocaine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Fentanyl" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl_Analogue]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Fentanyl_Analogue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Oxycodone]"
+                      dataType="bool"
+                      name="Oxycodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Oxymorphone]"
+                      dataType="bool"
+                      name="Oxymorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Ethanol]"
+                      dataType="bool"
+                      name="Ethanol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Hydrocodone]"
+                      dataType="bool"
+                      name="Hydrocodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Benzodiazepine]"
+                      dataType="bool"
+                      name="Benzodiazepine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Methadone]"
+                      dataType="bool"
+                      name="Methadone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Amphet]"
+                      dataType="bool"
+                      name="Amphet" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Tramad]"
+                      dataType="bool"
+                      name="Tramad" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Morphine_NotHeroin]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Morphine_NotHeroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Hydromorphone]"
+                      dataType="bool"
+                      name="Hydromorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[Other]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Other" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[OpiateNOS]"
+                      dataType="bool"
+                      name="OpiateNOS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[AnyOpioid]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="AnyOpioid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[MannerofDeath]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="MannerofDeath" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="DeathCityGeo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="ResidenceCityGeo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="InjuryCityGeo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination - tabela DrugTypeSt"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DrugTypeSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+                  connectionManagerRefId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Heroin]"
+                      cachedDataType="bool"
+                      cachedName="Heroin"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Heroin]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Heroin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Cocaine]"
+                      cachedDataType="bool"
+                      cachedName="Cocaine"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Cocaine]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Cocaine]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Fentanyl]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fentanyl"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Fentanyl]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Fentanyl_Analogue]"
+                      cachedDataType="bool"
+                      cachedName="Fentanyl_Analogue"
+                      cachedSortKeyPosition="17"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Fentanyl_Analogue]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl_Analogue]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Oxycodone]"
+                      cachedDataType="bool"
+                      cachedName="Oxycodone"
+                      cachedSortKeyPosition="4"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Oxycodone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxycodone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Oxymorphone]"
+                      cachedDataType="bool"
+                      cachedName="Oxymorphone"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Oxymorphone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxymorphone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Ethanol]"
+                      cachedDataType="bool"
+                      cachedName="Ethanol"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Ethanol]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Ethanol]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Hydrocodone]"
+                      cachedDataType="bool"
+                      cachedName="Hydrocodone"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Hydrocodone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydrocodone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Benzodiazepine]"
+                      cachedDataType="bool"
+                      cachedName="Benzodiazepine"
+                      cachedSortKeyPosition="8"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Benzodiazepine]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Benzodiazepine]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Methadone]"
+                      cachedDataType="bool"
+                      cachedName="Methadone"
+                      cachedSortKeyPosition="9"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Methadone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Methadone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Amphet]"
+                      cachedDataType="bool"
+                      cachedName="Amphet"
+                      cachedSortKeyPosition="10"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Amphet]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Amphet]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Tramad]"
+                      cachedDataType="bool"
+                      cachedName="Tramad"
+                      cachedSortKeyPosition="11"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Tramad]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Tramad]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Morphine_NotHeroin]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Morphine_NotHeroin"
+                      cachedSortKeyPosition="12"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Morphine_NotHeroin]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Morphine_NotHeroin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Hydromorphone]"
+                      cachedDataType="bool"
+                      cachedName="Hydromorphone"
+                      cachedSortKeyPosition="13"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Hydromorphone]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydromorphone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[Other]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Other"
+                      cachedSortKeyPosition="14"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Other]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Other]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[OpiateNOS]"
+                      cachedDataType="bool"
+                      cachedName="OpiateNOS"
+                      cachedSortKeyPosition="15"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[OpiateNOS]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[OpiateNOS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].Columns[AnyOpioid]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="AnyOpioid"
+                      cachedSortKeyPosition="16"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[AnyOpioid]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[AnyOpioid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[IdDrugType]"
+                      dataType="i4"
+                      name="IdDrugType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Heroin]"
+                      dataType="bool"
+                      name="Heroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Cocaine]"
+                      dataType="bool"
+                      name="Cocaine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Fentanyl]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Fentanyl" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Fentanyl_Analogue]"
+                      dataType="bool"
+                      name="Fentanyl_Analogue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Oxycodone]"
+                      dataType="bool"
+                      name="Oxycodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Oxymorphone]"
+                      dataType="bool"
+                      name="Oxymorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Ethanol]"
+                      dataType="bool"
+                      name="Ethanol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Hydrocodone]"
+                      dataType="bool"
+                      name="Hydrocodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Benzodiazepine]"
+                      dataType="bool"
+                      name="Benzodiazepine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Methadone]"
+                      dataType="bool"
+                      name="Methadone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Amphet]"
+                      dataType="bool"
+                      name="Amphet" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Tramad]"
+                      dataType="bool"
+                      name="Tramad" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Morphine_NotHeroin]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Morphine_NotHeroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Hydromorphone]"
+                      dataType="bool"
+                      name="Hydromorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[Other]"
+                      codePage="1250"
+                      dataType="str"
+                      length="250"
+                      name="Other" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[OpiateNOS]"
+                      dataType="bool"
+                      name="OpiateNOS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input].ExternalColumns[AnyOpioid]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="AnyOpioid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Heroin]"
+                      cachedDataType="bool"
+                      cachedName="Heroin"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Heroin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Cocaine]"
+                      cachedDataType="bool"
+                      cachedName="Cocaine"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Cocaine]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Fentanyl]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fentanyl"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Oxycodone]"
+                      cachedDataType="bool"
+                      cachedName="Oxycodone"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxycodone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Oxymorphone]"
+                      cachedDataType="bool"
+                      cachedName="Oxymorphone"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxymorphone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">5</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Ethanol]"
+                      cachedDataType="bool"
+                      cachedName="Ethanol"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Ethanol]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">6</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Hydrocodone]"
+                      cachedDataType="bool"
+                      cachedName="Hydrocodone"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydrocodone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Benzodiazepine]"
+                      cachedDataType="bool"
+                      cachedName="Benzodiazepine"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Benzodiazepine]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">8</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Methadone]"
+                      cachedDataType="bool"
+                      cachedName="Methadone"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Methadone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">9</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Amphet]"
+                      cachedDataType="bool"
+                      cachedName="Amphet"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Amphet]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">10</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Tramad]"
+                      cachedDataType="bool"
+                      cachedName="Tramad"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Tramad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">11</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Morphine_NotHeroin]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Morphine_NotHeroin"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Morphine_NotHeroin]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">12</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Hydromorphone]"
+                      cachedDataType="bool"
+                      cachedName="Hydromorphone"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydromorphone]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">13</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Other]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Other"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Other]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">14</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[OpiateNOS]"
+                      cachedDataType="bool"
+                      cachedName="OpiateNOS"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[OpiateNOS]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">15</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[AnyOpioid]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="AnyOpioid"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[AnyOpioid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">16</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input].Columns[Copy of Fentanyl_Analogue]"
+                      cachedDataType="bool"
+                      cachedName="Copy of Fentanyl_Analogue"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fentanyl_Analogue]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">17</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Heroin]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Heroin]"
+                      name="Heroin"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Heroin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Cocaine]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Cocaine]"
+                      name="Cocaine"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Cocaine]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl]"
+                      name="Fentanyl"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Fentanyl]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxycodone]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxycodone]"
+                      name="Oxycodone"
+                      sortKeyPosition="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxycodone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxymorphone]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Oxymorphone]"
+                      name="Oxymorphone"
+                      sortKeyPosition="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Oxymorphone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Ethanol]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Ethanol]"
+                      name="Ethanol"
+                      sortKeyPosition="6">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Ethanol]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydrocodone]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydrocodone]"
+                      name="Hydrocodone"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydrocodone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Benzodiazepine]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Benzodiazepine]"
+                      name="Benzodiazepine"
+                      sortKeyPosition="8">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Benzodiazepine]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Methadone]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Methadone]"
+                      name="Methadone"
+                      sortKeyPosition="9">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Methadone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Amphet]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Amphet]"
+                      name="Amphet"
+                      sortKeyPosition="10">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Amphet]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Tramad]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Tramad]"
+                      name="Tramad"
+                      sortKeyPosition="11">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Tramad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Morphine_NotHeroin]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Morphine_NotHeroin]"
+                      name="Morphine_NotHeroin"
+                      sortKeyPosition="12">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Morphine_NotHeroin]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydromorphone]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Hydromorphone]"
+                      name="Hydromorphone"
+                      sortKeyPosition="13">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Hydromorphone]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Other]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Other]"
+                      name="Other"
+                      sortKeyPosition="14">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[Other]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[OpiateNOS]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[OpiateNOS]"
+                      name="OpiateNOS"
+                      sortKeyPosition="15">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[OpiateNOS]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[AnyOpioid]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[AnyOpioid]"
+                      name="AnyOpioid"
+                      sortKeyPosition="16">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output].Columns[AnyOpioid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl_Analogue]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output].Columns[Fentanyl_Analogue]"
+                      name="Fentanyl_Analogue"
+                      sortKeyPosition="17">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fentanyl_Analogue]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Sort Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli DrugTypeSt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{353CD62B-20F8-46F3-8434-E16F1F55F9FF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli DrugTypeSt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{11C4E120-4687-49EA-BE13-8EE4B20FD20C}"
+          SQLTask:SqlStatementSource="truncate table DrugTypeSt;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5548542F-7B15-40A3-9AFD-7363B715B606}"
+      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli DrugTypeSt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt"
+          TopLeft="526,319" />
+        <NodeLayout
+          Size="317,42"
+          Id="Package\Execute SQL Task - Czyszczenie tabeli DrugTypeSt"
+          TopLeft="523,113" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="682.25,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,164"
+              Start="0,0"
+              End="0,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="348,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Flat File Source - Źródło danych dla wymiaru DrugTypeSt"
+          TopLeft="502,87" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt"
+          TopLeft="535,461" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Sort"
+          TopLeft="624,358" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Sort Output]"
+          TopLeft="671.25,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Derived Column"
+          TopLeft="592,175" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Flat File Source Output]"
+          TopLeft="672.5,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\Data Conversion"
+          TopLeft="589,265" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Derived Column Output]"
+          TopLeft="668,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt.Paths[Data Conversion Output]"
+          TopLeft="670,307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru DrugTypeSt\OLE DB Destination - tabela DrugTypeSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
