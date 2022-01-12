@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Flat File Connection Manager Age Group"
   DTS:DTSID="{C853AD18-A7BC-4413-8BE7-FBD059B1473F}"

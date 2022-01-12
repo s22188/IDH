@@ -1,25 +1,25 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="1/9/2022 4:33:32 PM"
+  DTS:CreationDate="1/9/2022 4:09:07 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="VLAB004-13"
   DTS:CreatorName="PJWSTK\s22360"
-  DTS:DTSID="{E913E184-4AC8-400C-A47B-49179052FADF}"
+  DTS:DTSID="{7A8D7845-A997-4C90-B6DB-6647B69B889F}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{408BB0CA-5B85-4063-B6F7-3206D06362F4}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{8C2AD281-DA0D-4917-AC0C-5084C2DD41F2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s222191]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{67121376-0730-44DA-B961-8E6D35FD7D77}"
+      DTS:DTSID="{0A7B2FB9-7840-480D-B8B0-CB8EC8458D7A}"
       DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s222191">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -31,7 +31,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A1879B40-0CA5-4D37-8BF8-B2FE49CE4A70}"
+      DTS:DTSID="{4191DC15-CB37-4A9D-B2F1-5886AF841F07}"
       DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s22360">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -44,13 +44,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt"
+      DTS:refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{67F49CD2-F78A-4BFB-8FAD-6966BB75BB22}"
+      DTS:DTSID="{E6C541EF-88EC-461E-860F-6FE2C1E5467A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task - Ładowanie wymiaru InjurySt"
+      DTS:ObjectName="Data Flow Task - Ładowanie wymiaru DeathSt"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -58,12 +58,12 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt"
+              refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
               localeId="1045"
-              name="Flat File Source - Źródło danych dla wymiaru InjurySt"
+              name="Flat File Source - Źródło danych dla wymiaru DeathSt"
               usesDispositions="true"
               version="1">
               <properties>
@@ -78,136 +78,158 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Connections[FlatFileConnection]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Connections[FlatFileConnection]"
                   connectionManagerID="{57D3F03C-C10C-4E2B-A07B-27C66CB0CFBD}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager Drug Deaths]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[DescriptionofInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCity]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DescriptionofInjury]"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCity]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCity]"
+                      name="DeathCity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCounty]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCounty]"
+                      name="DeathCounty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[Location]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[Location]"
+                      name="Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[COD]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[COD]"
+                      length="200"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[COD]"
+                      name="COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[OtherSignifican]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[OtherSignifican]"
+                      length="200"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[OtherSignifican]"
+                      name="OtherSignifican"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[MannerofDeath]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[MannerofDeath]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[MannerofDeath]"
+                      name="MannerofDeath"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCityGeo]"
                       length="150"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[DescriptionofInjury]"
-                      name="DescriptionofInjury"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryPlace]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryPlace]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryPlace]"
-                      name="InjuryPlace"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCity]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCity]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCity]"
-                      name="InjuryCity"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCounty]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCounty]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCounty]"
-                      name="InjuryCounty"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryState]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryState]"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryState]"
-                      name="InjuryState"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCityGeo]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCityGeo]"
-                      length="150"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCityGeo]"
-                      name="InjuryCityGeo"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCityGeo]"
+                      name="DeathCityGeo"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -224,227 +246,227 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Column 0" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[ID]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Date]"
                       dataType="date"
                       name="Date" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DateType]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DateType]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="DateType" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Age]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Age" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Sex]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Sex]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Sex" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Race]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Race" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCity]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="ResidenceCity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCounty]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="ResidenceCounty" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[ResidenceState]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceState]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="ResidenceState" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DeathCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCity]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="DeathCity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DeathCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCounty]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="DeathCounty" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Location]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Location" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[LocationifOther]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[LocationifOther]"
                       codePage="1250"
                       dataType="str"
                       length="100"
                       name="LocationifOther" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DescriptionofInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DescriptionofInjury]"
                       codePage="1250"
                       dataType="str"
                       length="150"
                       name="DescriptionofInjury" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryPlace]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[InjuryPlace]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="InjuryPlace" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCity]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="InjuryCity" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCounty]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="InjuryCounty" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryState]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[InjuryState]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="InjuryState" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[COD]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[COD]"
                       codePage="1250"
                       dataType="str"
                       length="200"
                       name="COD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[OtherSignifican]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[OtherSignifican]"
                       codePage="1250"
                       dataType="str"
                       length="200"
                       name="OtherSignifican" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Heroin]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Heroin]"
                       dataType="bool"
                       name="Heroin" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Cocaine]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Cocaine]"
                       dataType="bool"
                       name="Cocaine" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Fentanyl" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl_Analogue]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl_Analogue]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Fentanyl_Analogue" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Oxycodone]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Oxycodone]"
                       dataType="bool"
                       name="Oxycodone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Oxymorphone]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Oxymorphone]"
                       dataType="bool"
                       name="Oxymorphone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Ethanol]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Ethanol]"
                       dataType="bool"
                       name="Ethanol" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Hydrocodone]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Hydrocodone]"
                       dataType="bool"
                       name="Hydrocodone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Benzodiazepine]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Benzodiazepine]"
                       dataType="bool"
                       name="Benzodiazepine" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Methadone]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Methadone]"
                       dataType="bool"
                       name="Methadone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Amphet]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Amphet]"
                       dataType="bool"
                       name="Amphet" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Tramad]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Tramad]"
                       dataType="bool"
                       name="Tramad" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Morphine_NotHeroin]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Morphine_NotHeroin]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Morphine_NotHeroin" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Hydromorphone]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Hydromorphone]"
                       dataType="bool"
                       name="Hydromorphone" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[Other]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[Other]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="Other" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[OpiateNOS]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[OpiateNOS]"
                       dataType="bool"
                       name="OpiateNOS" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[AnyOpioid]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[AnyOpioid]"
                       codePage="1250"
                       dataType="str"
                       length="1"
                       name="AnyOpioid" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[MannerofDeath]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[MannerofDeath]"
                       codePage="1250"
                       dataType="str"
                       length="50"
                       name="MannerofDeath" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[DeathCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[DeathCityGeo]"
                       codePage="1250"
                       dataType="str"
                       length="150"
                       name="DeathCityGeo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCityGeo]"
                       codePage="1250"
                       dataType="str"
                       length="150"
                       name="ResidenceCityGeo" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].ExternalColumns[InjuryCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCityGeo]"
                       codePage="1250"
                       dataType="str"
                       length="150"
@@ -452,27 +474,27 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -481,11 +503,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt"
+              refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Destination - tabela InjurySt"
+              name="OLE DB Destination - tabela DeathSt"
               usesDispositions="true"
               version="4">
               <properties>
@@ -496,7 +518,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[InjurySt]</property>
+                  name="OpenRowset">[dbo].[DeathSt]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -538,7 +560,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Connections[OleDbConnection]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s222191]"
                   connectionManagerRefId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s222191]"
                   description="The OLE DB runtime connection used to access the database."
@@ -546,130 +568,145 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[DescriptionofInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[DeathCity]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="DescriptionofInjury"
+                      cachedLength="50"
+                      cachedName="DeathCity"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionOfInjury]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[DescriptionofInjury]" />
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCity]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCity]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[InjuryPlace]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[DeathCounty]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="InjuryPlace"
+                      cachedName="DeathCounty"
                       cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryPlace]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryPlace]" />
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCounty]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCounty]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[InjuryCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[Location]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="InjuryCity"
+                      cachedName="Location"
                       cachedSortKeyPosition="3"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCity]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCity]" />
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[Location]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[InjuryCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[COD]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="InjuryCounty"
+                      cachedLength="200"
+                      cachedName="COD"
                       cachedSortKeyPosition="4"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCounty]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCounty]" />
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[COD]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[COD]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[InjuryState]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[OtherSignifican]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="OtherSignifican"
+                      cachedSortKeyPosition="5"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[OtherSignifican]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[OtherSignifican]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[MannerofDeath]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="InjuryState"
-                      cachedSortKeyPosition="5"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryState]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryState]" />
+                      cachedName="MannerofDeath"
+                      cachedSortKeyPosition="6"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[MannerOfDeath]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[MannerofDeath]" />
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].Columns[InjuryCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].Columns[DeathCityGeo]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="150"
-                      cachedName="InjuryCityGeo"
-                      cachedSortKeyPosition="6"
-                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCityGeo]"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCityGeo]" />
+                      cachedName="DeathCityGeo"
+                      cachedSortKeyPosition="7"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCityGeo]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCityGeo]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[IdInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[IdDeath]"
                       dataType="i4"
-                      name="IdInjury" />
+                      name="IdDeath" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[DescriptionOfInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="DeathCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="DeathCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[COD]"
                       codePage="1250"
                       dataType="str"
                       length="200"
-                      name="DescriptionOfInjury" />
+                      name="COD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryPlace]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[OtherSignifican]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="OtherSignifican" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[MannerOfDeath]"
                       codePage="1250"
                       dataType="str"
                       length="100"
-                      name="InjuryPlace" />
+                      name="MannerOfDeath" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCity]"
-                      codePage="1250"
-                      dataType="str"
-                      length="100"
-                      name="InjuryCity" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCounty]"
-                      codePage="1250"
-                      dataType="str"
-                      length="100"
-                      name="InjuryCounty" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryState]"
-                      codePage="1250"
-                      dataType="str"
-                      length="100"
-                      name="InjuryState" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input].ExternalColumns[InjuryCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input].ExternalColumns[DeathCityGeo]"
                       codePage="1250"
                       dataType="str"
                       length="150"
-                      name="InjuryCityGeo" />
+                      name="DeathCityGeo" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -678,7 +715,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort"
+              refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -697,16 +734,16 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[DescriptionofInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[DeathCity]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="DescriptionofInjury"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[DescriptionofInjury]">
+                      cachedLength="50"
+                      cachedName="DeathCity"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCity]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -719,12 +756,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[InjuryPlace]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[DeathCounty]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="InjuryPlace"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryPlace]">
+                      cachedName="DeathCounty"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCounty]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -737,12 +774,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[InjuryCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[Location]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="InjuryCity"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCity]">
+                      cachedName="Location"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[Location]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -755,12 +792,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[InjuryCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[COD]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="InjuryCounty"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCounty]">
+                      cachedLength="200"
+                      cachedName="COD"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[COD]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -773,12 +810,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[InjuryState]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[OtherSignifican]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="InjuryState"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryState]">
+                      cachedLength="200"
+                      cachedName="OtherSignifican"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[OtherSignifican]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -791,12 +828,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input].Columns[InjuryCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[MannerofDeath]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="InjuryCityGeo"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCityGeo]">
+                      cachedLength="50"
+                      cachedName="MannerofDeath"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[MannerofDeath]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -808,110 +845,144 @@
                           name="NewSortKeyPosition">6</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input].Columns[DeathCityGeo]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="DeathCityGeo"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCityGeo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">7</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output]"
+                  refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[DescriptionofInjury]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCity]"
                       codePage="1250"
                       dataType="str"
-                      length="150"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[DescriptionofInjury]"
-                      name="DescriptionofInjury"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCity]"
+                      name="DeathCity"
                       sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[DescriptionofInjury]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCity]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryPlace]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCounty]"
                       codePage="1250"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryPlace]"
-                      name="InjuryPlace"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCounty]"
+                      name="DeathCounty"
                       sortKeyPosition="2">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryPlace]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCounty]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCity]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[Location]"
                       codePage="1250"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCity]"
-                      name="InjuryCity"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[Location]"
+                      name="Location"
                       sortKeyPosition="3">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCity]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[Location]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCounty]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[COD]"
                       codePage="1250"
                       dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCounty]"
-                      name="InjuryCounty"
+                      length="200"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[COD]"
+                      name="COD"
                       sortKeyPosition="4">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCounty]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[COD]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryState]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[OtherSignifican]"
                       codePage="1250"
                       dataType="str"
-                      length="50"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryState]"
-                      name="InjuryState"
+                      length="200"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[OtherSignifican]"
+                      name="OtherSignifican"
                       sortKeyPosition="5">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryState]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[OtherSignifican]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCityGeo]"
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[MannerofDeath]"
                       codePage="1250"
                       dataType="str"
-                      length="150"
-                      lineageId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output].Columns[InjuryCityGeo]"
-                      name="InjuryCityGeo"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[MannerofDeath]"
+                      name="MannerofDeath"
                       sortKeyPosition="6">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output].Columns[InjuryCityGeo]}</property>
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[MannerofDeath]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output].Columns[DeathCityGeo]"
+                      name="DeathCityGeo"
+                      sortKeyPosition="7">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output].Columns[DeathCityGeo]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -922,34 +993,34 @@
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt.Paths[Flat File Source Output]"
-              endId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Inputs[Sort Input]"
+              refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
-              startId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt.Outputs[Flat File Source Output]" />
+              startId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Data Flow Task - Ładowanie wymiaru InjurySt.Paths[Sort Output]"
-              endId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt.Inputs[OLE DB Destination Input]"
+              refId="Package\Data Flow Task - Ładowanie wymiaru DeathSt.Paths[Sort Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt.Inputs[OLE DB Destination Input]"
               name="Sort Output"
-              startId="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort.Outputs[Sort Output]" />
+              startId="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli InjurySt"
+      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli DeathSt"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{913A0A50-AD2C-4091-A3E2-49ADE873CFD9}"
+      DTS:DTSID="{63D96A10-EA02-4689-8BFB-6A9A6FBD3CF0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli InjurySt"
+      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli DeathSt"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{67121376-0730-44DA-B961-8E6D35FD7D77}"
-          SQLTask:SqlStatementSource="truncate table InjurySt;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{0A7B2FB9-7840-480D-B8B0-CB8EC8458D7A}"
+          SQLTask:SqlStatementSource="truncate table DeathSt;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -957,11 +1028,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{50B5F324-E31D-493C-B87D-E60308BC9784}"
-      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli InjurySt"
+      DTS:DTSID="{BFE00DF3-4F93-42CE-824D-F1B58B37F6F2}"
+      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli DeathSt"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task - Ładowanie wymiaru InjurySt" />
+      DTS:To="Package\Data Flow Task - Ładowanie wymiaru DeathSt" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -977,26 +1048,26 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="296,41.6"
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt"
-          TopLeft="394,362" />
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt"
+          TopLeft="287,285" />
         <NodeLayout
           Size="299.2,41.6"
-          Id="Package\Execute SQL Task - Czyszczenie tabeli InjurySt"
-          TopLeft="388,180" />
+          Id="Package\Execute SQL Task - Czyszczenie tabeli DeathSt"
+          TopLeft="292,124" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="539.75,222">
+          TopLeft="438.25,166">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,140"
+              EndConnector="0,119"
               Start="0,0"
-              End="0,132.5">
+              End="0,111.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,132.5" />
+                    End="0,111.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1009,36 +1080,36 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task - Ładowanie wymiaru InjurySt">
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru DeathSt">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Sort"
-          TopLeft="458,179" />
+          Size="251.2,41.6"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt"
+          TopLeft="372,302" />
         <NodeLayout
           Size="329.6,41.6"
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt\Flat File Source - Źródło danych dla wymiaru InjurySt"
-          TopLeft="348,64" />
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Flat File Source - Źródło danych dla wymiaru DeathSt"
+          TopLeft="342,95" />
         <NodeLayout
-          Size="251.2,41.6"
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt"
-          TopLeft="385,301" />
+          Size="97.6,41.6"
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt\Sort"
+          TopLeft="452,195" />
         <EdgeLayout
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt.Paths[Sort Output]"
-          TopLeft="508.75,221">
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt.Paths[Flat File Source Output]"
+          TopLeft="504,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80"
+              EndConnector="0,58"
               Start="0,0"
-              End="0,72.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.5" />
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1048,19 +1119,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Data Flow Task - Ładowanie wymiaru InjurySt.Paths[Flat File Source Output]"
-          TopLeft="510,106">
+          Id="Package\Data Flow Task - Ładowanie wymiaru DeathSt.Paths[Sort Output]"
+          TopLeft="499.25,237">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73"
+              EndConnector="0,65"
               Start="0,0"
-              End="0,65.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1073,7 +1144,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task - Ładowanie wymiaru InjurySt\OLE DB Destination - tabela InjurySt">
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru DeathSt\OLE DB Destination - tabela DeathSt">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

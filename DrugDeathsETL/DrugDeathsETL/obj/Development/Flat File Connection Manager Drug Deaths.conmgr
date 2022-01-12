@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Flat File Connection Manager Drug Deaths"
   DTS:DTSID="{57D3F03C-C10C-4E2B-A07B-27C66CB0CFBD}"
