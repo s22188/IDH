@@ -1,0 +1,446 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="71dfc748-a9af-4924-83cd-cd2d862f1416" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Type Of Drug</ID>
+  <Name>Type Of Drug</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-5801" scrolltop="-10663" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="15452" y="26326" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Type of Drug" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3810" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000e20e000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="DWH_DrugType" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-5801</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-10663</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="95a8716f-23b2-4f15-82ab-e1c7e36b51b6">
+    <DataSourceViewID>s22188</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="c1248fb7-2b61-4b64-8329-4b4c787203ee">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="69248031-6396-4518-92a9-cfe217c70559">
+      <ID>Id Drug Type</ID>
+      <Name>Drug Type</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6fd68844-ce36-4b01-9d1e-c18df43fa93d">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d3e1747d-0869-4510-8f7f-5bbf956a50cb">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>IdDrugType</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="4f63d167-61f0-4ad8-b461-dcec4702e31a">
+          <AttributeID>Heroin</AttributeID>
+          <Name>Heroin</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7241a25f-3517-4087-925c-16e81f196f0b">
+          <AttributeID>Cocaine</AttributeID>
+          <Name>Cocaine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="83eb7509-0924-4fe1-8e27-0af9942882cf">
+          <AttributeID>Fentanyl</AttributeID>
+          <Name>Fentanyl</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="acc89c1b-88ab-4f21-8ba6-78d39dcd655c">
+          <AttributeID>Fentanyl Analogue</AttributeID>
+          <Name>Fentanyl Analogue</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c6e286a9-f4b9-46f5-b044-4cffdd022642">
+          <AttributeID>Oxycodone</AttributeID>
+          <Name>Oxycodone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c3cba4eb-9127-4c6c-81b5-59328d2fd078">
+          <AttributeID>Oxymorphone</AttributeID>
+          <Name>Oxymorphone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ac973502-8a1b-4782-9b4d-ff0494dd973a">
+          <AttributeID>Ethanol</AttributeID>
+          <Name>Ethanol</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="70b9d31b-333a-40da-81aa-220bef701d3d">
+          <AttributeID>Hydrocodone</AttributeID>
+          <Name>Hydrocodone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="23f64655-374c-4b68-8f2e-7470258f53a9">
+          <AttributeID>Benzodiazepine</AttributeID>
+          <Name>Benzodiazepine</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="46019f8e-30cf-46be-a530-7e747eacad36">
+          <AttributeID>Methadone</AttributeID>
+          <Name>Methadone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="27bd33a1-519e-430e-893b-3a5175a2d751">
+          <AttributeID>Amphet</AttributeID>
+          <Name>Amphet</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="88cb271b-4941-4cb2-8f62-aac7a9704b6d">
+          <AttributeID>Tramad</AttributeID>
+          <Name>Tramad</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d1172920-f504-45ea-a0b5-9ad86184652a">
+          <AttributeID>Morphine Not Heroin</AttributeID>
+          <Name>Morphine Not Heroin</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="678760e5-0ba7-4877-be12-207a31d4e37e">
+          <AttributeID>Hydromorphone</AttributeID>
+          <Name>Hydromorphone</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d2ba3c80-33fa-4840-81f6-075eb2acf813">
+          <AttributeID>Other</AttributeID>
+          <Name>Other</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="661a04c4-41c2-4de1-ab11-987c2d02e4ac">
+          <AttributeID>Opiate NOS</AttributeID>
+          <Name>Opiate NOS</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="155eb204-8882-4592-9c28-8b2af96f93d7">
+          <AttributeID>Any Opioid</AttributeID>
+          <Name>Any Opioid</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a42a3c4a-c75d-41f3-be91-0f5dacac819a">
+      <ID>Heroin</ID>
+      <Name>Heroin</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8114d9e2-faef-49b4-82b4-6c1982fd53d7">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="680a63cd-96ce-4447-a934-bf348ef4176a">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Heroin</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d8b5808c-f779-4a8e-8722-da5a4ccc9cd1">
+      <ID>Cocaine</ID>
+      <Name>Cocaine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="368a7c3e-2cf5-4973-b85e-530d12969e64">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ebdf2a70-3988-4329-b729-f09910bf6cd4">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Cocaine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1a498b7a-4287-4a33-97e0-259fc4f82b26">
+      <ID>Fentanyl</ID>
+      <Name>Fentanyl</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e0adaeb-708a-49cd-8de6-ffb93570f251">
+          <DataType>WChar</DataType>
+          <DataSize>50</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e3a3da59-8e80-4d12-aca4-fbe5b941ffed">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Fentanyl</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4137a679-3f1d-417a-af63-360abe878575">
+      <ID>Fentanyl Analogue</ID>
+      <Name>Fentanyl Analogue</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="062456ed-f32d-4721-98c3-2fd31f7cfaed">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4a2bec17-afd4-4c4e-9a83-ab11f3a97f71">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Fentanyl_Analogue</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="daad6d7b-abd9-43c6-bdb6-580a616ef24a">
+      <ID>Oxycodone</ID>
+      <Name>Oxycodone</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4627bec0-51f3-463e-b7f6-c40748160d4c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6a8f6056-6949-44c2-a8b0-5d8281db4b50">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Oxycodone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4511ad81-57ea-489a-968c-c2e29ddb8e81">
+      <ID>Oxymorphone</ID>
+      <Name>Oxymorphone</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b01cf47c-9c78-4c9f-9d1d-da5a70522be1">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="840871c1-3fda-45d7-b051-02e3d5d5c801">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Oxymorphone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3a229e81-9fe3-4b88-a5e9-a5356a578a40">
+      <ID>Ethanol</ID>
+      <Name>Ethanol</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4e66cdfb-90f6-4588-841e-05ae08f66fde">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c8fd21e1-14b9-491f-bb1c-149eb0dab0c5">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Ethanol</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dc9d1239-3e18-48bd-bc8a-7299e342c45a">
+      <ID>Hydrocodone</ID>
+      <Name>Hydrocodone</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="29319df4-a722-45b6-9b92-85721b11f570">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="008b9161-3d73-4daf-a7ed-cd8ac5527e55">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Hydrocodone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c9e5a7f7-2505-40d5-83c9-506bcc11f990">
+      <ID>Benzodiazepine</ID>
+      <Name>Benzodiazepine</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d7346c28-d9d2-4157-823f-18a4546a9000">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="408d0be5-892d-4a6a-80f3-0fa131ee6c7d">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Benzodiazepine</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b8106d94-01ad-4748-828a-70b5032f1169">
+      <ID>Methadone</ID>
+      <Name>Methadone</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0803c386-7708-46b7-b1c7-0cc9f99fef83">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4f41c860-71fd-4d5e-9bf4-82f8a5108d59">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Methadone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="04c94529-9738-4b6a-971b-c4cf1e4cedfd">
+      <ID>Amphet</ID>
+      <Name>Amphet</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="66eea88c-7399-4bbe-a54f-dae793604883">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="85bed785-4a63-4d9b-bdae-6f8a3e019fea">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Amphet</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f726b0c2-99ea-4812-8bb5-ca5380367b81">
+      <ID>Tramad</ID>
+      <Name>Tramad</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="58b93857-03a3-4c17-b23f-4be62f139f49">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63b14be5-f9f4-4c81-a3c3-2543edb5ba58">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Tramad</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b9f4e6a-972e-4ba5-b944-87682baab724">
+      <ID>Morphine Not Heroin</ID>
+      <Name>Morphine Not Heroin</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="26f21e79-76a1-443f-9f50-26002cf40649">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a468779-c107-493f-a22f-76f8a75bd785">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Morphine_NotHeroin</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="ec80caa4-ecc3-4b70-8097-f884e45496b6">
+      <ID>Hydromorphone</ID>
+      <Name>Hydromorphone</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ecd6844b-78e0-41d1-b603-30514c84a739">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c546c265-aba4-4ce2-9bf5-5038d2a11d18">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Hydromorphone</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="106165c3-cda6-45a3-bebf-8c37da698398">
+      <ID>Other</ID>
+      <Name>Other</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab99d94f-7f4c-4e35-a7f8-b5c5f4544a6c">
+          <DataType>WChar</DataType>
+          <DataSize>250</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="48477fce-5aa3-49d4-a08d-9808be2d98a1">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>Other</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="283858e9-fee1-4970-89b2-250172a50021">
+      <ID>Opiate NOS</ID>
+      <Name>Opiate NOS</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c5ff6bb9-900d-4d02-8d7c-f0449b33558c">
+          <DataType>Boolean</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e53bec6c-b1e3-4788-a891-aeb66da3dbeb">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>OpiateNOS</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0d76f857-9d01-46e1-a530-8731afc7ff82">
+      <ID>Any Opioid</ID>
+      <Name>Any Opioid</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ab5360d0-1ad1-46e5-bab4-87be91b63f32">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a78c9b34-e168-47cd-9854-f6a3c5a72dbc">
+            <TableID>DWH_DrugType</TableID>
+            <ColumnID>AnyOpioid</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

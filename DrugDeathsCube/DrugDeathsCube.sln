@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "DrugDeathsCube", "DrugDeathsCube\DrugDeathsCube.dwproj", "{FC5ECE74-D323-4B87-ABF6-4F33DE88A15D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC5ECE74-D323-4B87-ABF6-4F33DE88A15D}.Development|Default.ActiveCfg = Development
+		{FC5ECE74-D323-4B87-ABF6-4F33DE88A15D}.Development|Default.Build.0 = Development
+		{FC5ECE74-D323-4B87-ABF6-4F33DE88A15D}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE02F8F1-7C28-4AB7-A332-F02246BFF23B}
+	EndGlobalSection
+EndGlobal

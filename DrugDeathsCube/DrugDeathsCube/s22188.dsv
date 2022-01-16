@@ -1,0 +1,557 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b4214194-3b3f-47e8-bba8-2e9071edc748" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>s22188</ID>
+  <Name>s22188</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout>
+              <dds>
+                <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="15" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="46" scrolltop="-11377" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="98" x="46964" y="27649" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                  <font>
+                    <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                  </font>
+                  <mouseicon>
+                    <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                  </mouseicon>
+                </diagram>
+                <layoutmanager>
+                  <ddsxmlobj />
+                </layoutmanager>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Drug Death" left="16570" top="-4752" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b0f0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_DrugDeaths" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Age" left="25706" top="-4616" logicalid="2" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000fe080000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_Age" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Death" left="25735" top="0" logicalid="3" controlid="3" masterid="0" hint1="0" hint2="0" width="3228" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e00009c0c000043110000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_Death" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Type of Drug" left="13730" top="4185" logicalid="4" controlid="4" masterid="0" hint1="0" hint2="0" width="3810" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000e20e000088130000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_DrugType" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Injury" left="21068" top="-10179" logicalid="6" controlid="6" masterid="0" hint1="0" hint2="0" width="3572" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000f40d00009b0f0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_Injury" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Person" left="18974" top="2997" logicalid="7" controlid="7" masterid="0" hint1="0" hint2="0" width="3545" height="4419" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000d90d000043110000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_Person" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Time" left="6020" top="0" logicalid="8" controlid="8" masterid="0" hint1="0" hint2="0" width="3360" height="3572" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobjectstreaminitwrapper binary="000e0000200d0000f40d0000" />
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="DWH_Time" vartype="8" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <shape groupshapeid="0" groupnode="0" />
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="9080" top="-1405" logicalid="9" controlid="9" masterid="0" hint1="0" hint2="0" width="7790" height="1941" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-Time]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="1" sourceattachpoint="11" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="9380" y="136" />
+                    <point x="12975" y="136" />
+                    <point x="12975" y="-1105" />
+                    <point x="16570" y="-1105" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="16336" top="-1057" logicalid="10" controlid="10" masterid="0" hint1="0" hint2="0" width="934" height="5742" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-DrugType]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="10" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="16735" y="4185" />
+                    <point x="16735" y="1714" />
+                    <point x="16970" y="1714" />
+                    <point x="16970" y="-757" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="18697" top="-1057" logicalid="11" controlid="11" masterid="0" hint1="0" hint2="0" width="799" height="4554" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-Person]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="7" destid="1" sourceattachpoint="0" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="19096" y="2997" />
+                    <point x="19096" y="-357" />
+                    <point x="19170" y="-357" />
+                    <point x="19170" y="-757" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="19270" top="-1405" logicalid="12" controlid="12" masterid="0" hint1="0" hint2="0" width="6765" height="2364" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-Death]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="10" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="25735" y="559" />
+                    <point x="22653" y="559" />
+                    <point x="22653" y="-1105" />
+                    <point x="19570" y="-1105" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="19270" top="-4414" logicalid="13" controlid="13" masterid="0" hint1="0" hint2="0" width="6736" height="859" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-Age]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="10" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="25706" y="-4015" />
+                    <point x="22638" y="-4015" />
+                    <point x="22638" y="-3855" />
+                    <point x="19570" y="-3855" />
+                  </connector>
+                </ddscontrol>
+                <ddscontrol controlprogid="MSDDS.Polyline" left="19270" top="-6931" logicalid="14" controlid="14" masterid="0" hint1="0" hint2="0" width="2098" height="2826" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                  <control>
+                    <ddsxmlobj>
+                      <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                    </ddsxmlobj>
+                  </control>
+                  <layoutobject>
+                    <ddsxmlobj>
+                      <property name="LogicalObject" value="dataSet.Relations[DrugDeaths-Injury]" vartype="8" />
+                      <property name="Virtual" value="0" vartype="11" />
+                      <property name="VisibleAP" value="0" vartype="3" />
+                    </ddsxmlobj>
+                  </layoutobject>
+                  <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="1" sourceattachpoint="26" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                    <point x="21068" y="-6532" />
+                    <point x="20319" y="-6532" />
+                    <point x="20319" y="-4405" />
+                    <point x="19570" y="-4405" />
+                  </connector>
+                </ddscontrol>
+              </dds>
+</DiagramLayout>
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>46</DiagramViewPortLeft>
+            <DiagramViewPortTop>-11377</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>98</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>s22188</DataSourceID>
+  <Schema>
+    <xs:schema id="s22188" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="s22188" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="4e5c4616-5b60-4059-8fa2-616eaeb56b20">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="DWH_DrugDeaths" msprop:design-time-name="bb4da7f3-2d0e-40ff-9a79-693fd64482d6" msprop:FriendlyName="Drug Death" msprop:DbSchemaName="DWH" msprop:DbTableName="DrugDeaths" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Time" msprop:design-time-name="09ee26bd-8326-45eb-a1f9-db20e892dea1" msprop:DbColumnName="Time" msprop:FriendlyName="Time" type="xs:dateTime" />
+                  <xs:element name="IdDrugType" msprop:design-time-name="9cdbbf95-cdc2-42ec-9b06-38a7f97a2e23" msprop:DbColumnName="IdDrugType" msprop:FriendlyName="IdDrugType" type="xs:int" />
+                  <xs:element name="IdPerson" msprop:design-time-name="cc8b0174-867a-4d08-a5b9-d54db03a223c" msprop:DbColumnName="IdPerson" msprop:FriendlyName="IdPerson" type="xs:int" />
+                  <xs:element name="IdInjury" msprop:design-time-name="74d52695-844e-4ebe-a042-ad9124f5b526" msprop:DbColumnName="IdInjury" msprop:FriendlyName="IdInjury" type="xs:int" />
+                  <xs:element name="IdDeath" msprop:design-time-name="39fc4b59-6163-4668-96b6-fe200d8fd597" msprop:DbColumnName="IdDeath" msprop:FriendlyName="IdDeath" type="xs:int" />
+                  <xs:element name="IdAge" msprop:design-time-name="fc71a6e1-8c90-4077-98af-2d0e4715e2ef" msprop:DbColumnName="IdAge" msprop:FriendlyName="IdAge" type="xs:int" />
+                  <xs:element name="Count" msprop:design-time-name="e602a20b-8d61-4480-996c-9e35862f103d" msprop:DbColumnName="Count" msprop:FriendlyName="Count" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_Age" msprop:design-time-name="93e8df07-08e8-45a3-a67b-4d4e4d4716e1" msprop:FriendlyName="Age" msprop:DbSchemaName="DWH" msprop:DbTableName="Age" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdAge" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="971a99d5-6d64-444a-8c30-15bafb46107b" msprop:DbColumnName="IdAge" msprop:FriendlyName="IdAge" type="xs:int" />
+                  <xs:element name="Age" msprop:design-time-name="3430e983-c76f-4082-8a18-17968037e367" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:int" minOccurs="0" />
+                  <xs:element name="AgeGroup" msprop:design-time-name="ab8abe2c-20a4-44ba-8185-ec12ee49710b" msprop:DbColumnName="AgeGroup" msprop:FriendlyName="AgeGroup" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_Death" msprop:design-time-name="b9ab0e1e-b180-4ba4-91b6-c3a8116f85d1" msprop:FriendlyName="Death" msprop:DbSchemaName="DWH" msprop:DbTableName="Death" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdDeath" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="0676f4fb-687b-4a72-bf5a-9f422bf954a7" msprop:DbColumnName="IdDeath" msprop:FriendlyName="IdDeath" type="xs:int" />
+                  <xs:element name="DeathCity" msprop:design-time-name="28bec3a9-0637-4f4d-aa21-8de9fa046d2b" msprop:DbColumnName="DeathCity" msprop:FriendlyName="DeathCity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DeathCounty" msprop:design-time-name="576a86b2-ce35-47ed-9b8a-79e509ec2313" msprop:DbColumnName="DeathCounty" msprop:FriendlyName="DeathCounty" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Location" msprop:design-time-name="663e67bd-78cb-46da-94d8-56b7bde58415" msprop:DbColumnName="Location" msprop:FriendlyName="Location" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="COD" msprop:design-time-name="b3775a4f-4938-4150-a394-f96a113cab22" msprop:DbColumnName="COD" msprop:FriendlyName="COD" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OtherSignifican" msprop:design-time-name="f345bd88-945a-4a87-89ea-3101fa038027" msprop:DbColumnName="OtherSignifican" msprop:FriendlyName="OtherSignifican" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MannerOfDeath" msprop:design-time-name="40891f80-ccc7-4387-a2a3-6d744e119899" msprop:DbColumnName="MannerOfDeath" msprop:FriendlyName="MannerOfDeath" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DeathCityGeo" msprop:design-time-name="63c0dab0-9288-42a1-8d31-b674cbf9e0f9" msprop:DbColumnName="DeathCityGeo" msprop:FriendlyName="DeathCityGeo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_DrugType" msprop:design-time-name="398e7fec-1ebf-43b9-9cf1-c3e05287a8e1" msprop:FriendlyName="Type of Drug" msprop:DbSchemaName="DWH" msprop:DbTableName="DrugType" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdDrugType" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="2c904f30-05b9-416d-bb47-7231cb2eb7dc" msprop:DbColumnName="IdDrugType" msprop:FriendlyName="IdDrugType" type="xs:int" />
+                  <xs:element name="Heroin" msprop:design-time-name="fcadf2b5-7ced-4191-ab09-9cd332c6e3e2" msprop:DbColumnName="Heroin" msprop:FriendlyName="Heroin" type="xs:boolean" />
+                  <xs:element name="Cocaine" msprop:design-time-name="e8eef8d9-6488-4953-a749-13ed66fa5f2f" msprop:DbColumnName="Cocaine" msprop:FriendlyName="Cocaine" type="xs:boolean" />
+                  <xs:element name="Fentanyl" msprop:design-time-name="16c0bb72-613f-40c5-a913-3fcaa344d03f" msprop:DbColumnName="Fentanyl" msprop:FriendlyName="Fentanyl">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Fentanyl_Analogue" msprop:design-time-name="d72de66b-1690-4c5f-8eb9-e7fffe83481b" msprop:DbColumnName="Fentanyl_Analogue" msprop:FriendlyName="Fentanyl_Analogue" type="xs:boolean" />
+                  <xs:element name="Oxycodone" msprop:design-time-name="d5e0b909-1c9d-472c-a1af-87064a522b61" msprop:DbColumnName="Oxycodone" msprop:FriendlyName="Oxycodone" type="xs:boolean" />
+                  <xs:element name="Oxymorphone" msprop:design-time-name="2508bcef-7c09-4924-9b87-bc4d55cf8307" msprop:DbColumnName="Oxymorphone" msprop:FriendlyName="Oxymorphone" type="xs:boolean" />
+                  <xs:element name="Ethanol" msprop:design-time-name="329fef43-0410-43f4-87f8-236dbe73d9e4" msprop:DbColumnName="Ethanol" msprop:FriendlyName="Ethanol" type="xs:boolean" />
+                  <xs:element name="Hydrocodone" msprop:design-time-name="9cc5e7e6-75f0-4c60-9fe1-91c47b7aa8ca" msprop:DbColumnName="Hydrocodone" msprop:FriendlyName="Hydrocodone" type="xs:boolean" />
+                  <xs:element name="Benzodiazepine" msprop:design-time-name="f0330265-33f9-4005-ba89-021ea8dad7e8" msprop:DbColumnName="Benzodiazepine" msprop:FriendlyName="Benzodiazepine" type="xs:boolean" />
+                  <xs:element name="Methadone" msprop:design-time-name="82815450-3ded-4f75-85b3-043962f39082" msprop:DbColumnName="Methadone" msprop:FriendlyName="Methadone" type="xs:boolean" />
+                  <xs:element name="Amphet" msprop:design-time-name="52cd7251-fc46-470d-a0f2-506bd5ed582a" msprop:DbColumnName="Amphet" msprop:FriendlyName="Amphet" type="xs:boolean" />
+                  <xs:element name="Tramad" msprop:design-time-name="de20a4cc-43c1-42e1-bfcc-6129fc92942e" msprop:DbColumnName="Tramad" msprop:FriendlyName="Tramad" type="xs:boolean" />
+                  <xs:element name="Morphine_NotHeroin" msprop:design-time-name="1bbbaf56-85f5-4c0f-8bd4-8536248a86a7" msprop:DbColumnName="Morphine_NotHeroin" msprop:FriendlyName="Morphine_NotHeroin">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Hydromorphone" msprop:design-time-name="a8380c95-3f25-41b8-a294-ad977a30c2e2" msprop:DbColumnName="Hydromorphone" msprop:FriendlyName="Hydromorphone" type="xs:boolean" />
+                  <xs:element name="Other" msprop:design-time-name="02ee73e0-e84e-48d5-8751-a877061a5d0a" msprop:DbColumnName="Other" msprop:FriendlyName="Other">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="OpiateNOS" msprop:design-time-name="20878b9b-8f2d-400a-8382-ec0e5319168e" msprop:DbColumnName="OpiateNOS" msprop:FriendlyName="OpiateNOS" type="xs:boolean" />
+                  <xs:element name="AnyOpioid" msprop:design-time-name="0d56db9d-f608-43c8-855a-9fd477cb8f10" msprop:DbColumnName="AnyOpioid" msprop:FriendlyName="AnyOpioid">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="1" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_Injury" msprop:design-time-name="0ab656e8-3335-4b0f-ad1f-812b9cadf82b" msprop:FriendlyName="Injury" msprop:DbSchemaName="DWH" msprop:DbTableName="Injury" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdInjury" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="8aad2843-2907-4e79-bccf-b39f1a9bb215" msprop:DbColumnName="IdInjury" msprop:FriendlyName="IdInjury" type="xs:int" />
+                  <xs:element name="DescriptionOfInjury" msprop:design-time-name="35f8d546-0b23-481b-b6c3-8291f8e4ccee" msprop:DbColumnName="DescriptionOfInjury" msprop:FriendlyName="DescriptionOfInjury" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InjuryPlace" msprop:design-time-name="283f3e9c-92aa-4533-8fd0-bc0b3aea0f54" msprop:DbColumnName="InjuryPlace" msprop:FriendlyName="InjuryPlace" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InjuryCity" msprop:design-time-name="21112f63-ac9d-403d-80f6-488c6b3d0f56" msprop:DbColumnName="InjuryCity" msprop:FriendlyName="InjuryCity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InjuryCounty" msprop:design-time-name="53e5d17b-3624-4ddc-a30b-a9529d78f8b0" msprop:DbColumnName="InjuryCounty" msprop:FriendlyName="InjuryCounty" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InjuryState" msprop:design-time-name="053d30ca-00c4-4c41-831f-8584b978c6b6" msprop:DbColumnName="InjuryState" msprop:FriendlyName="InjuryState" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="InjuryCityGeo" msprop:design-time-name="940f0d70-2093-4630-a82b-9713830f6563" msprop:DbColumnName="InjuryCityGeo" msprop:FriendlyName="InjuryCityGeo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="150" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_Person" msprop:design-time-name="a137f073-eae2-4be4-aadf-c5840d95c470" msprop:FriendlyName="Person" msprop:DbSchemaName="DWH" msprop:DbTableName="Person" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="IdPerson" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="650657f3-8d4b-4130-b147-531c7e00c241" msprop:DbColumnName="IdPerson" msprop:FriendlyName="IdPerson" type="xs:int" />
+                  <xs:element name="ID" msprop:design-time-name="68906c11-5c75-4f7b-b104-111b625e7db0" msprop:DbColumnName="ID" msprop:FriendlyName="ID" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sex" msprop:design-time-name="f4bad638-535f-4bae-97b0-4f15b9d44584" msprop:DbColumnName="Sex" msprop:FriendlyName="Sex" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Race" msprop:design-time-name="3e8d6cfd-c297-44fe-ad14-8fe532bd4902" msprop:DbColumnName="Race" msprop:FriendlyName="Race" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ResidenceCity" msprop:design-time-name="e9ecb80d-a6a4-45c3-ad6e-c431a3fed6a5" msprop:DbColumnName="ResidenceCity" msprop:FriendlyName="ResidenceCity" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ResidenceCounty" msprop:design-time-name="ef2dd85c-c7fe-4798-85e0-d8a9af6c4ade" msprop:DbColumnName="ResidenceCounty" msprop:FriendlyName="ResidenceCounty" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ResidenceState" msprop:design-time-name="2dc24360-c0ae-4261-a7c3-f74dea04a494" msprop:DbColumnName="ResidenceState" msprop:FriendlyName="ResidenceState" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ResidenceCityGeo" msprop:design-time-name="55f2015d-e795-443d-b16c-ab40b374f40a" msprop:DbColumnName="ResidenceCityGeo" msprop:FriendlyName="ResidenceCityGeo" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="DWH_Time" msprop:design-time-name="80b6b06e-4056-4801-8dcd-4721da91a9e5" msprop:FriendlyName="Time" msprop:DbSchemaName="DWH" msprop:DbTableName="Time" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Data" msprop:design-time-name="18f9be9c-9c87-4d79-a520-8cb81c35cb8e" msprop:DbColumnName="Data" msprop:FriendlyName="Data" type="xs:dateTime" />
+                  <xs:element name="Year" msprop:design-time-name="e00de3b0-d6b0-4a8b-8017-e1f648bf45da" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:decimal" />
+                  <xs:element name="Month" msprop:design-time-name="58e6ba4c-6a56-4ae2-a136-837e5bda11ea" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:decimal" />
+                  <xs:element name="Day" msprop:design-time-name="27e44346-403c-476d-b71b-8b113aa35059" msprop:DbColumnName="Day" msprop:FriendlyName="Day" type="xs:decimal" />
+                  <xs:element name="PreHolidayPeriod" msprop:design-time-name="6d682973-00a2-4798-86af-640e1ee22735" msprop:DbColumnName="PreHolidayPeriod" msprop:FriendlyName="PreHolidayPeriod" type="xs:boolean" minOccurs="0" />
+                  <xs:element name="HolidayPeriod" msprop:design-time-name="9f5c1257-7240-48f8-b2f5-dc8de6244589" msprop:DbColumnName="HolidayPeriod" msprop:FriendlyName="HolidayPeriod" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_DrugDeaths" />
+          <xs:field xpath="Time" />
+          <xs:field xpath="IdDrugType" />
+          <xs:field xpath="IdPerson" />
+          <xs:field xpath="IdInjury" />
+          <xs:field xpath="IdDeath" />
+          <xs:field xpath="IdAge" />
+        </xs:unique>
+        <xs:unique name="DWH_Age_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_Age" />
+          <xs:field xpath="IdAge" />
+        </xs:unique>
+        <xs:unique name="DWH_Death_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_Death" />
+          <xs:field xpath="IdDeath" />
+        </xs:unique>
+        <xs:unique name="DWH_DrugType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_DrugType" />
+          <xs:field xpath="IdDrugType" />
+        </xs:unique>
+        <xs:unique name="DWH_Injury_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_Injury" />
+          <xs:field xpath="IdInjury" />
+        </xs:unique>
+        <xs:unique name="DWH_Person_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_Person" />
+          <xs:field xpath="IdPerson" />
+        </xs:unique>
+        <xs:unique name="DWH_Time_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//DWH_Time" />
+          <xs:field xpath="Data" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="DrugDeaths-Time" msdata:parent="DWH_Time" msdata:child="DWH_DrugDeaths" msdata:parentkey="Data" msdata:childkey="Time" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DrugDeaths-DrugType" msdata:parent="DWH_DrugType" msdata:child="DWH_DrugDeaths" msdata:parentkey="IdDrugType" msdata:childkey="IdDrugType" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DrugDeaths-Person" msdata:parent="DWH_Person" msdata:child="DWH_DrugDeaths" msdata:parentkey="IdPerson" msdata:childkey="IdPerson" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DrugDeaths-Death" msdata:parent="DWH_Death" msdata:child="DWH_DrugDeaths" msdata:parentkey="IdDeath" msdata:childkey="IdDeath" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DrugDeaths-Age" msdata:parent="DWH_Age" msdata:child="DWH_DrugDeaths" msdata:parentkey="IdAge" msdata:childkey="IdAge" msprop:IsLogical="True" msprop:Description="" />
+          <msdata:Relationship name="DrugDeaths-Injury" msdata:parent="DWH_Injury" msdata:child="DWH_DrugDeaths" msdata:parentkey="IdInjury" msdata:childkey="IdInjury" msprop:IsLogical="True" msprop:Description="" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <s22188 xmlns="" />
+  </Schema>
+</DataSourceView>

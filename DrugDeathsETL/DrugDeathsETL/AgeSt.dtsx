@@ -1,0 +1,1404 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/9/2022 2:17:52 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VLAB004-13"
+  DTS:CreatorName="PJWSTK\s22360"
+  DTS:DTSID="{0799D1D6-0957-4EE0-8D40-8B249BC6E9D2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{EAB684AA-7E1F-484F-A66C-CF4C5D47C2C1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22219 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{400F1C28-2DF0-45BB-A189-598BED0BEEC3}"
+      DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s22219 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=db-mssql16.pjwstk.edu.pl;Initial Catalog=s22219;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22360]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1A72D033-CC8E-4EC6-9BDF-2ED4F97A9669}"
+      DTS:ObjectName="db-mssql16.pjwstk.edu.pl.s22360">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=db-mssql16.pjwstk.edu.pl;Initial Catalog=s22360;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{401B21CA-FDAE-4728-93CA-F80C5048A3F8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task - Ładowanie wymiaru AgeSt"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Inputs[Data Conversion Input].Columns[Age]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age]"
+                      name="Copy of Age"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Inputs[Derived Column Input].Columns[Age]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Age"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[REPLACE](#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]},".",",")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACE(Age,".",",")</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source -  Wczytanie grup wiekowych"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Connections[FlatFileConnection]"
+                  connectionManagerID="{C853AD18-A7BC-4413-8BE7-FBD059B1473F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager Age Group]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age]"
+                      name="age"
+                      precision="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age_group]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].ExternalColumns[age_group]"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age_group]"
+                      name="age_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].ExternalColumns[age]"
+                      dataType="numeric"
+                      name="age"
+                      precision="3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].ExternalColumns[age_group]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      name="age_group" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Flat File Source - Źródło danych dla wymiaru AgeSt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Connections[FlatFileConnection]"
+                  connectionManagerID="{57D3F03C-C10C-4E2B-A07B-27C66CB0CFBD}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Flat File Connection Manager Drug Deaths]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].Columns[Age]"
+                      name="Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Column 0]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Column 0" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      dataType="date"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[DateType]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DateType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Age]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Sex]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceState]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="ResidenceState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DeathCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="DeathCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Location]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Location" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[LocationifOther]"
+                      codePage="1250"
+                      dataType="str"
+                      length="100"
+                      name="LocationifOther" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[DescriptionofInjury]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="DescriptionofInjury" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryPlace]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryPlace" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCity]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryCity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCounty]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryCounty" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryState]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="InjuryState" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[COD]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="COD" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[OtherSignifican]"
+                      codePage="1250"
+                      dataType="str"
+                      length="200"
+                      name="OtherSignifican" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Heroin]"
+                      dataType="bool"
+                      name="Heroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Cocaine]"
+                      dataType="bool"
+                      name="Cocaine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Fentanyl" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Fentanyl_Analogue]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Fentanyl_Analogue" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Oxycodone]"
+                      dataType="bool"
+                      name="Oxycodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Oxymorphone]"
+                      dataType="bool"
+                      name="Oxymorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Ethanol]"
+                      dataType="bool"
+                      name="Ethanol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Hydrocodone]"
+                      dataType="bool"
+                      name="Hydrocodone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Benzodiazepine]"
+                      dataType="bool"
+                      name="Benzodiazepine" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Methadone]"
+                      dataType="bool"
+                      name="Methadone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Amphet]"
+                      dataType="bool"
+                      name="Amphet" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Tramad]"
+                      dataType="bool"
+                      name="Tramad" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Morphine_NotHeroin]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Morphine_NotHeroin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Hydromorphone]"
+                      dataType="bool"
+                      name="Hydromorphone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[Other]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Other" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[OpiateNOS]"
+                      dataType="bool"
+                      name="OpiateNOS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[AnyOpioid]"
+                      codePage="1250"
+                      dataType="str"
+                      length="1"
+                      name="AnyOpioid" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[MannerofDeath]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="MannerofDeath" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[DeathCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="DeathCityGeo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[ResidenceCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="ResidenceCityGeo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output].ExternalColumns[InjuryCityGeo]"
+                      codePage="1250"
+                      dataType="str"
+                      length="150"
+                      name="InjuryCityGeo" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Left Input].Columns[Age]"
+                      cachedDataType="numeric"
+                      cachedName="Age"
+                      cachedPrecision="3"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Outputs[Sort Output].Columns[Age]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Right Input].Columns[age]"
+                      cachedDataType="numeric"
+                      cachedName="age"
+                      cachedPrecision="3"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Right Input].Columns[age_group]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="age_group"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age_group]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[Age]"
+                      name="Age"
+                      precision="3"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Left Input].Columns[Age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[AgeGroup]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[AgeGroup]"
+                      name="AgeGroup">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Right Input].Columns[age_group]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination - tabela AgeSt"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AgeSt]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Connections[OleDbConnection]"
+                  connectionManagerID="{962319A4-719E-4B21-B185-0A07A5AAF5BC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[db-mssql16.pjwstk.edu.pl.s22188]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].Columns[Age]"
+                      cachedDataType="numeric"
+                      cachedName="Age"
+                      cachedPrecision="3"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[Age]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].Columns[AgeGroup]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="AgeGroup"
+                      externalMetadataColumnId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output].Columns[AgeGroup]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].ExternalColumns[IdAge]"
+                      dataType="i4"
+                      name="IdAge" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
+                      dataType="i4"
+                      name="Age" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input].ExternalColumns[AgeGroup]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="AgeGroup" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Inputs[Sort Input].Columns[Copy of Age]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Age"
+                      cachedPrecision="3"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Outputs[Sort Output].Columns[Age]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Outputs[Sort Output].Columns[Age]"
+                      name="Age"
+                      precision="3"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Age]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Inputs[Sort Input].Columns[age]"
+                      cachedDataType="numeric"
+                      cachedName="age"
+                      cachedPrecision="3"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Inputs[Sort Input].Columns[age_group]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="age_group"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age_group]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age]"
+                      name="age"
+                      precision="3"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age_group]"
+                      codePage="1250"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output].Columns[age_group]"
+                      name="age_group">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output].Columns[age_group]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Inputs[Sort Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Inputs[Sort Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Flat File Source Output1]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt.Inputs[OLE DB Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Sort Output]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Sort Output1]"
+              endId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task - Czyszczenie tabeli AgeSt"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{87E31B12-6689-4FFF-B568-8AEA1752F10F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task - Czyszczenie tabeli AgeSt"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{962319A4-719E-4B21-B185-0A07A5AAF5BC}"
+          SQLTask:SqlStatementSource="truncate table AgeSt;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{27335FE7-F47C-4726-AC28-8E31D76B97C0}"
+      DTS:From="Package\Execute SQL Task - Czyszczenie tabeli AgeSt"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task - Ładowanie wymiaru AgeSt" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="286,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt"
+          TopLeft="328,225" />
+        <NodeLayout
+          Size="289,42"
+          Id="Package\Execute SQL Task - Czyszczenie tabeli AgeSt"
+          TopLeft="320,101" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="467.75,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru AgeSt">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Derived Column"
+          TopLeft="320,175" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort"
+          TopLeft="350,352" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Merge Join"
+          TopLeft="559,428" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt"
+          TopLeft="502,530" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source -  Wczytanie grup wiekowych"
+          TopLeft="670,83" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Sort 1"
+          TopLeft="756,261" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Data Conversion"
+          TopLeft="316,266" />
+        <NodeLayout
+          Size="320,42"
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt\Flat File Source - Źródło danych dla wymiaru AgeSt"
+          TopLeft="239,93" />
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Sort Output1]"
+          TopLeft="809.5,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-165.166666666667,125"
+              Start="0,0"
+              End="-165.166666666667,117.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.0881458966566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.0881458966566"
+                    Point2="0,74.0881458966566"
+                    Point3="-4,74.0881458966566" />
+                  <mssgle:LineSegment
+                    End="-161.166666666667,74.0881458966566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-161.166666666667,74.0881458966566"
+                    Point2="-165.166666666667,74.0881458966566"
+                    Point3="-165.166666666667,78.0881458966566" />
+                  <mssgle:LineSegment
+                    End="-165.166666666667,117.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Sort Output]"
+          TopLeft="399,394">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204.666666666667,34"
+              Start="0,0"
+              End="204.666666666667,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.1519756838906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.1519756838906"
+                    Point2="0,20.1519756838906"
+                    Point3="4,20.1519756838906" />
+                  <mssgle:LineSegment
+                    End="200.666666666667,20.1519756838906" />
+                  <mssgle:CubicBezierSegment
+                    Point1="200.666666666667,20.1519756838906"
+                    Point2="204.666666666667,20.1519756838906"
+                    Point3="204.666666666667,24.1519756838906" />
+                  <mssgle:LineSegment
+                    End="204.666666666667,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Merge Join Output]"
+          TopLeft="623.25,470">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Flat File Source Output1]"
+          TopLeft="397.9,134.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.4"
+              Start="0,0"
+              End="0,32.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Flat File Source Output]"
+          TopLeft="812.75,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,136"
+              Start="0,0"
+              End="0,128.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,128.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Derived Column Output]"
+          TopLeft="395.4,216.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.4"
+              Start="0,0"
+              End="0,41.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task - Ładowanie wymiaru AgeSt.Paths[Data Conversion Output]"
+          TopLeft="396.5,308">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task - Ładowanie wymiaru AgeSt\OLE DB Destination - tabela AgeSt">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
